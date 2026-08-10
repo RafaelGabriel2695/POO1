@@ -40,7 +40,7 @@ public class App {
         }
 
         System.out.println("\n foreach (cool, descolado, legal, que preciso aprender a usar...)");
-        for( Circulo c : lista ){
+        for( Circulo c : lista ){   
             System.out.println(c.toString());
         }
 
