@@ -1,12 +1,11 @@
 package br.pucrs.Rafael;
 
 public class ItemVenda {
-
     private int quantidade;
     private Produto prod;
 
-    public ItemVenda(int umaQuantidade, Produto umProd) {
-        this.quantidade = umaQuantidade;
+    public ItemVenda(int qtde, Produto umProd) {
+        this.quantidade = qtde;
         this.prod = umProd;
     }
 
@@ -14,9 +13,15 @@ public class ItemVenda {
         return quantidade * prod.getPreco();
     }
 
-    public String toString() {
-        return "Produto: " + prod.getNome() +
-                "Quantidade: " + quantidade +
-                "Valor: " + getValor();
+    public String getDetalhe() {
+        return String.format("(%d) %-15s \t %d X %6.2f    %6.2f",
+                prod.getCodigo(), prod.getNome(), this.quantidade,
+                prod.getPreco(), this.getValor());
     }
+
+    @Override
+    public String toString() {
+        return "ItemVenda [quantidade=" + quantidade + ", prod=" + prod + "]";
+    }
+
 }

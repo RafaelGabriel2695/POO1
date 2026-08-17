@@ -1,23 +1,25 @@
 package br.pucrs.Rafael;
 
 public class Cliente {
+    private int codigo;
     private String nome;
-    private String cpf;
 
-    public Cliente(String nome, String cpf) {
-        this.nome = nome;
-        this.cpf = cpf;
+    public Cliente(int umCodigo, String umNome) {
+        this.codigo = umCodigo;
+        this.nome = umNome;
     }
 
     public String getNome() {
         return nome;
     }
 
-    public String getCpf() {
-        return cpf;
+    public int getCodigo() {
+        return codigo;
     }
 
+    @Override
     public String toString() {
-        return String.format("Cliente: %s, CPF: %s", nome, cpf);
+        return String.format("(%d) \t %s", codigo, nome);
     }
+
 }

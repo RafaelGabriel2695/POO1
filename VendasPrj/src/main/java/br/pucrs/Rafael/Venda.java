@@ -1,0 +1,50 @@
+package br.pucrs.Rafael;
+
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+
+public class Venda {
+    private Cliente cliente;
+    private ArrayList<ItemVenda> itens;
+
+    public Venda(Cliente cli) {
+        this.cliente = cli;
+        this.itens = new ArrayList<>();
+    }
+
+    public void inserir(Produto prod) {
+        this.inserir(1, prod);
+    }
+
+    public void inserir(int qtde, Produto prod) {
+        itens.add(new ItemVenda(qtde, prod));
+    }
+
+    public String getNotaFiscal() {
+        double total = 0;
+        StringBuilder nota = new StringBuilder("Exercício POO 2026/2\t");
+        nota.append(LocalDateTime.now().toLocalDate() + "\n");
+        nota.append("Comprador: " + cliente.getNome());
+        nota.append("\n- - - - - - - - - - - - - - - - - - - - - - -\n");
+        // não devemos mais usar for tradicional...
+        // for (int i = 0; i < itens.size(); i++) {
+        // ItemVenda item = lista.get(i);
+
+        // ... com foreach exatamente com o mesmo efeito...
+        for (ItemVenda item : itens) {
+            nota.append(item.getDetalhe() + "\n");
+            // nota.append("\n");
+            total = total + item.getValor();
+        }
+
+        nota.append("\n- - - - - - - - - - - - - - - - - - - - - - -\n");
+        nota.append(String.format("     \t\t\tTotal: R$ %.2f\n\n", total));
+        return nota.toString();
+    }
+
+    @Override
+    public String toString() {
+        return "Venda [cliente=" + cliente + ", itens=" + itens + "]";
+    }
+
+}

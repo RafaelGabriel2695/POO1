@@ -4,29 +4,36 @@ public class Produto {
 
     private int codigo;
     private String nome;
-    private Double preco;
+    private double precoUnitario;
 
     public Produto(int umCodigo, String umNome, double umPreco) {
         this.codigo = umCodigo;
         this.nome = umNome;
-        this.preco = umPreco;
-    }
-
-    public int getCodigo() {
-        return codigo;
+        this.precoUnitario = umPreco;
     }
 
     public String getNome() {
         return nome;
     }
 
-    public double getPreco() {
-        return preco;
+    public int getCodigo() {
+        return codigo;
     }
 
-    public String toString(){
-        return "Código:" + codigo +
-                "Nome:" + nome +
-                "Preço:" + preco;
+    public double getPreco() {
+        return precoUnitario;
+    }
+
+    public void setPreco(double novoPreco) {
+        precoUnitario = novoPreco;
+    }
+
+    @Override
+    public String toString() {
+        return "Produto{" +
+                "codigo=" + getCodigo() +
+                ", nome='" + getNome() + '\'' +
+                ", preco='" + getPreco() + '\'' +
+                '}';
     }
 }
