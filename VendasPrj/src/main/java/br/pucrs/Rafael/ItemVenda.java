@@ -1,4 +1,4 @@
-package br.pucrs.Rafael;
+        package br.pucrs.Rafael;
 
 public class ItemVenda {
     private int quantidade;

@@ -9,6 +9,11 @@ public class Cliente {
         this.nome = umNome;
     }
 
+    public Cliente() {
+        this.nome = "Não Informado";
+        codigo = -1;
+    }
+
     public String getNome() {
         return nome;
     }
