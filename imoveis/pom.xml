@@ -6,7 +6,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>br.pucrs.Rafael</groupId>
-  <artifactId>projeto01Prj</artifactId>
+  <artifactId>imoveis</artifactId>
   <version>1.0-SNAPSHOT</version>
 
   <properties>
